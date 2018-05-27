@@ -1,0 +1,11 @@
+/var/log/tshark.json
+{
+hourly
+rotate 2
+size 1M
+delaycompress
+postrotate
+/bin/kill -HUP  2> /dev/null || true
+systemctl restart tshark
+endscript
+}

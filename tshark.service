@@ -1,0 +1,11 @@
+[Unit]
+Description=tshark-alpha
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+ExecStart=/bin/sh /root/tshark_script.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

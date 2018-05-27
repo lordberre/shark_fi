@@ -1,0 +1,57 @@
+{
+   "template": "tshark-*",
+   "settings": {
+      "index.refresh_interval": "30s",
+      "number_of_shards": 2,
+      "number_of_replicas": 1
+   },
+   "mappings": {
+      "tshark_json": {
+         "_all": {
+            "enabled": false,
+            "omit_norms": true
+         },
+         "properties": {
+            "timestamp": {
+               "type": "date",
+               "doc_values": true
+            },
+            "layers": {
+                "properties": {
+                        "wlan_fc_retry": {
+                                "type": "integer"
+                        },
+                        "wlan_mgt_ds_current_channel": {
+                                "type": "integer"
+                        },
+                        "wlan_radio_data_rate": {
+                                "type": "integer"
+                        },
+                        "wlan_mgt_extcap_b19": {
+                                "type": "integer"
+                        },
+                        "wlan_radio_signal_dbm": {
+                                "type": "integer"
+                        },
+                        "wlan_fc_type_subtype": {
+                                "type": "integer"
+                        },
+                        "wlan_mgt.qbss.cu": {
+                                "type": "integer"
+                        },
+                        "wlan_mgt.qbss.scount": {
+                                "type": "integer"
+                        },
+                        "wlan_mgt.qbss.adc": {
+                                "type": "integer"
+                        },
+                        "wlan_mgt.fixed.bss_transition_status_code": {
+                                "type": "integer"
+                        }
+
+                }
+           }
+         }
+      }
+   }
+}'
